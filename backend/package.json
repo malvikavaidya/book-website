@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malvikavaidya/book-website.git"
+  },
+  "author": "Malvika Vaidya <malvikavaidya26@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malvikavaidya/book-website/issues"
+  },
+  "homepage": "https://github.com/malvikavaidya/book-website#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase": "^9.8.4",
+    "nodemon": "^2.0.18",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4"
+  }
+}
