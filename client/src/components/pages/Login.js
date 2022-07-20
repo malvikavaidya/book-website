@@ -20,15 +20,12 @@ const Login = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // async function onRegister() {
         try{
             await signInWithEmailAndPassword(auth, email, password);
         }catch(error){
             console.log(error);
             return;
         } 
-//   }
-    // onRegister(); 
     console.log("am i reaching")
     navigate("/add_review");
   };
