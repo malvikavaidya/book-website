@@ -1,16 +1,17 @@
 //imports
 import background from '../../images/book-bed-coffee.jpeg'
 import {Dimensions, StyleSheet} from 'react-native';
+import "./Home.css";
 
 function Home() {
 
 
     return ( 
-      <div>   
-           <div style={{ backgroundImage: `url(${background})`, width: '100vw', height: '100vh'}}>
-            {/* <Typography  align = "center" fontFamily='Helvetica Neue' fontWeight="light" fontSize='3.30rem' paddingTop='245px'>
-                Welcome to Malvika's Book Reviews
-            </Typography> */}
+      <div >   
+        <div>
+           <div class = 'split home' style={{ backgroundImage: `url(${background})`, width: '100vw', height: '100vh', }} padding-top='0px' height='100%' width= '100%' top='0'>
+           
+            </div>
             </div>        
       </div>
     )

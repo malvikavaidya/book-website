@@ -6,6 +6,7 @@ var cors = require('cors')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors())
+const { child, get } = require("firebase/database");
 
 const {db} = require('./firebaseinit.js');
 const { ContactsOutlined } = require("@material-ui/icons")
@@ -39,15 +40,15 @@ app.post("/write_review", async(req, res) =>{
 
 app.post("/add_review", addReview)
 
-function addReview(request, response){
-    var genre = request.body.Genre;
-    var author = request.body.Author;
-    var book = request.body.BookTitle;
-    var rating = request.body.Rating;
-    var review = request.body.Review;
-    var photolink = request.body.Photolink;
-    var amazonlink = request.body.AmazonLink;
-    var summary = request.body.Summary;
+function addReview(req, res){
+    var genre = req.body.Genre;
+    var author = req.body.Author;
+    var book = req.body.BookTitle;
+    var rating = req.body.Rating;
+    var review = req.body.Review;
+    var photolink = req.body.Photolink;
+    var amazonlink = req.body.AmazonLink;
+    var summary = req.body.Summary;
 
     let obj= {
         "title": book,
@@ -71,7 +72,32 @@ function addReview(request, response){
           }
     })
 
-    response.send(200)
+    res.send(200)
+}
+
+app.use((err,req,res,next)=>{
+    res.status(404).json({
+        error : {
+            message : err.message
+       }
+    });
+ })
+
+app.post("/get_fantasy_reviews", fetchFantasy)
+
+function fetchFantasy(req, res){
+    var jsonstring = [];
+    var leadsRef = db.ref('bookreviews/romance');
+    leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val();
+      jsonstring.push(childData);
+    });
+    
+    });
+    res.send(jsonstring);
+    //res.send([{"hello": "it really sucked", "book": "hi"}, {"hello": "hi"}, {"hello": "trying"}]);
+    // response.json({"hello": "it really sucked", "book": "hi"}, {"hello": "hi"});
 }
 
 
