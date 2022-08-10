@@ -17,7 +17,7 @@ function ThrillerCard() {
     return ( 
         <Center py={6} >
         <Box
-          maxW={'445px'}
+          maxW={'500px'}
           w={'full'}
           bg={useColorModeValue('white', 'gray.900')}
           boxShadow={'2xl'}
@@ -25,7 +25,7 @@ function ThrillerCard() {
           p={6}
           overflow={'hidden'}>
           <Box
-            h={'210px'}
+            h={'260px'}
             bg={'gray.100'}
             mt={-6}
             mx={-6}
@@ -33,31 +33,16 @@ function ThrillerCard() {
             pos={'relative'}>
             <Image
               src={
-                'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+                'https://images.unsplash.com/photo-1555440186-7f0a5a6a5537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FyZ295bGV8ZW58MHx8MHx8&w=1000&q=80'
               }
               layout={'fill'}
+              h={'260px'}
+              w={'500px'}
             />
           </Box>
           <Stack>
-            <Text
-              color={'green.500'}
-              textTransform={'uppercase'}
-              fontWeight={800}
-              fontSize={'sm'}
-              letterSpacing={1.1}>
-              Blog
-            </Text>
-            <Heading
-              color={useColorModeValue('gray.700', 'white')}
-              fontSize={'2xl'}
-              fontFamily={'body'}>
-              Boost your conversion rate
-            </Heading>
-            <Text color={'gray.500'}>
-              Explore thriller books!
-            </Text>
           </Stack>
-          <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+          <Stack mt={2} direction={'row'} spacing={4} align={'center'}>
           </Stack>
           <Button  align ='right' variant="ghost"
               colorScheme="gray" size="sm"

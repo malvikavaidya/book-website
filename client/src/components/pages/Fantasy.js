@@ -61,7 +61,6 @@ const allFantasyReviews =
         amazonlink={review.amazonlink}
         genre={review.genre}  
         />
-
         </GridItem>
       )
     })}

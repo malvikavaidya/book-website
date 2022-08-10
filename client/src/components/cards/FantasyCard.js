@@ -28,7 +28,7 @@ const FantasyCard= (props) => {
     return ( 
         <Center py={6} >
         <Box
-          maxW={'445px'}
+          maxW={'500px'}
           w={'full'}
           bg={useColorModeValue('white', 'gray.900')}
           boxShadow={'2xl'}
@@ -36,7 +36,8 @@ const FantasyCard= (props) => {
           p={6}
           overflow={'hidden'}>
           <Box
-            h={'210px'}
+            h={'260px'}
+            
             bg={'gray.100'}
             mt={-6}
             mx={-6}
@@ -44,31 +45,23 @@ const FantasyCard= (props) => {
             pos={'relative'}>
             <Image
               src={
-                'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+                'https://images.unsplash.com/photo-1508682641856-78948a748357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FzdGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
               }
               layout={'fill'}
+              pos={'relative'}
+              w={'500px'}
+              h={'260px'}
             />
           </Box>
           <Stack>
-            <Text
-              color={'green.500'}
-              textTransform={'uppercase'}
-              fontWeight={800}
-              fontSize={'sm'}
-              letterSpacing={1.1}>
-              Blog
-            </Text>
-            <Heading
+            {/* <Heading
               color={useColorModeValue('gray.700', 'white')}
               fontSize={'2xl'}
               fontFamily={'body'}>
               Explore fantasy books!
-            </Heading>
-            <Text color={'gray.500'}>
-              Explore fantasy books!
-            </Text>
+            </Heading> */}
           </Stack>
-          <Stack justifyContent = 'right' mt={6} direction={'row'} spacing={4} align={'right'}>
+          <Stack justifyContent = 'right' mt={2} direction={'row'} spacing={4} align={'right'}>
           </Stack>
           <Button  align ='right' variant="ghost"
               colorScheme="gray" size="sm"

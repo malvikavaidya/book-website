@@ -61,9 +61,7 @@ function addReview(req, res){
         "genre":genre
         
     }
-
     console.log(genre);
-
     db.ref("/bookreviews/" + genre + "/" + Date.now()).set(obj, function(error){
         if (error) {
             console.log("Failed with error: " + error)
@@ -71,7 +69,6 @@ function addReview(req, res){
             console.log("success")
           }
     })
-
     res.send(200)
 }
 
@@ -97,9 +94,7 @@ function fetchFantasy(req, res){
     
     });
     res.send(jsonstring);
-
 }
-
 
 app.listen(port, () => {
     console.log('Listening at http://localhost:${port}')

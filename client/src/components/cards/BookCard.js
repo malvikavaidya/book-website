@@ -11,7 +11,9 @@ import {
   Flex,
   Grid,
   GridItem,
+  Link,
 } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import {
   Accordion,
@@ -19,7 +21,9 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+
 } from '@chakra-ui/react'
+
 
 
 
@@ -69,15 +73,11 @@ const BookCard = (props) => {
             <Text color={'gray.500'}>
               Book Rating: {props.rating}
             </Text>
-            <Text color={'gray.500'}>
+            <Text color={'gray.500'} >
               Short Summary: {props.summary}
             </Text>
           </Stack>
-          <Stack justifyContent = 'center' mt={6} direction={'row'} spacing={4} align={'right'}>
-            {/* <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-              <Text fontWeight={600}></Text>
-              <Text color={'gray.500'}>Feb 08, 2021 </Text>
-            </Stack> */}    
+          <Stack  justifyContent = 'center' mt={2} direction={'row'} spacing={4} align={'right'}>  
             <Accordion  allowMultiple>
                 <AccordionItem>
                   <AccordionButton>
@@ -86,14 +86,21 @@ const BookCard = (props) => {
                   </Box>
                   <AccordionIcon />
                   </AccordionButton>
-    
                   <AccordionPanel pb={4}>
                       Hi this is the actual review
                 </AccordionPanel>
               </AccordionItem>
               </Accordion>
-               
           </Stack>
+
+          <Grid justifyContent = 'center' mt={2}>
+            <Link href={props.amazonlink} isExternal justifyContent = 'center'>
+                  Amazon Link 
+                <ExternalLinkIcon mx='2px' justifyContent = 'center'/>
+            </Link>
+          </Grid>
+
+
         </Box>
       </Center>
     )
