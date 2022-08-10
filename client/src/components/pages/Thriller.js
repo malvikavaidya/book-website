@@ -41,7 +41,7 @@ function Thriller() {
 
 React.useEffect(()=>{ //run fetches on load one time
   fetchThrillerReviews();
-},[])
+},[thrillerReviews])
 
 const allThrillerReviews = 
   <Grid templateColumns='repeat(4,1fr)' gap={4} marginTop='95px'>

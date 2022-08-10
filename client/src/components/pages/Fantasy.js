@@ -43,7 +43,7 @@ function Fantasy() {
 
   React.useEffect(()=>{ //run fetches on load one time
     fetchFantasyReviews();
-},[])
+},[fantasyReviews])
 
 
 const allFantasyReviews = 
