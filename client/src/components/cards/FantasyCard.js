@@ -69,11 +69,6 @@ const FantasyCard= (props) => {
             </Text>
           </Stack>
           <Stack justifyContent = 'right' mt={6} direction={'row'} spacing={4} align={'right'}>
-            {/* <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-              <Text fontWeight={600}></Text>
-              <Text color={'gray.500'}>Feb 08, 2021 </Text>
-            </Stack> */}    
-               
           </Stack>
           <Button  align ='right' variant="ghost"
               colorScheme="gray" size="sm"

@@ -83,11 +83,12 @@ app.use((err,req,res,next)=>{
     });
  })
 
-app.post("/get_fantasy_reviews", fetchFantasy)
+app.post("/get_reviews", fetchFantasy)
 
 function fetchFantasy(req, res){
     var jsonstring = [];
-    var leadsRef = db.ref('bookreviews/romance');
+    var genre = req.body.Genre;
+    var leadsRef = db.ref('bookreviews/' + genre);
     leadsRef.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
@@ -96,8 +97,7 @@ function fetchFantasy(req, res){
     
     });
     res.send(jsonstring);
-    //res.send([{"hello": "it really sucked", "book": "hi"}, {"hello": "hi"}, {"hello": "trying"}]);
-    // response.json({"hello": "it really sucked", "book": "hi"}, {"hello": "hi"});
+
 }
 
 

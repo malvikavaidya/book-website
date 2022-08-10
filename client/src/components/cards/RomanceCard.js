@@ -7,6 +7,7 @@ import {
   Stack,
   Avatar,
   useColorModeValue,
+  Button
 } from '@chakra-ui/react';
 
 function RomanceCard() {
@@ -56,11 +57,15 @@ function RomanceCard() {
             </Text>
           </Stack>
           <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
-            <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-              <Text fontWeight={600}></Text>
-              <Text color={'gray.500'}>Feb 08, 2021 </Text>
-            </Stack>
           </Stack>
+          <Button  align ='right' variant="ghost"
+              colorScheme="gray" size="sm"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/romance';
+                }}>
+                Click here to see Romance reviews!
+            </Button> 
         </Box>
       </Center>
     )

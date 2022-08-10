@@ -23,7 +23,7 @@ import {
 
 
 
-const FantasyBook= (props) => {
+const BookCard = (props) => {
     
     return ( 
         <Center py={6} >
@@ -99,4 +99,4 @@ const FantasyBook= (props) => {
     )
   }
   
-  export default FantasyBook
+  export default BookCard

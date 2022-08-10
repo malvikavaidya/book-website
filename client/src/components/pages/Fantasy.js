@@ -1,7 +1,7 @@
 //imports
 import { auth } from "../authentication/authInit.js";
 import axios from 'axios';
-import FantasyBook from "../cards/FantasyBook";
+import BookCard from "../cards/BookCard.js";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Fantasy.css";
@@ -24,8 +24,15 @@ function Fantasy() {
   const[fantasyReviews, setFantasyReviews] = React.useState([]);
 
   const fetchFantasyReviews = () =>{
+    const headers = {
+      'Content-Type': "application/json;charset=UTF-8",
+  }
     console.log("Fetch Fantasy Reviews")
-    axios.post('/get_fantasy_reviews'
+    axios.post('/get_reviews',{
+      Genre: "fantasy"
+  },{
+      headers: headers
+  }
     ).then((response)=>{
         setFantasyReviews(response.data);
     }).catch((error)=>{
@@ -44,7 +51,7 @@ const allFantasyReviews =
     {fantasyReviews.map((review)=>{
       return(
         <GridItem>
-        <FantasyBook key= {review.title} 
+        <BookCard key= {review.title} 
         title={review.title}
         author={review.author}
         summary={review.summary}
@@ -57,16 +64,9 @@ const allFantasyReviews =
 
         </GridItem>
       )
-      // <GridItem>
-          
-      {/* </GridItem> */}
     })}
     
   </Grid>
-
-
-
-
   return (
 
     <div class='split page' style={{ width: '100vw', height: '100vh'}} >
