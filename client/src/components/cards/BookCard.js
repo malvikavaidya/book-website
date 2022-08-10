@@ -70,10 +70,10 @@ const BookCard = (props) => {
               fontFamily={'body'}>
               {props.title}
             </Heading>
-            <Text color={'gray.500'}>
+            <Text color={'gray.500'} fontSize={'s'}>
               Book Rating: {props.rating}
             </Text>
-            <Text color={'gray.500'} >
+            <Text color={'gray.500'}  fontSize={'xs'}>
               Short Summary: {props.summary}
             </Text>
           </Stack>
@@ -86,8 +86,8 @@ const BookCard = (props) => {
                   </Box>
                   <AccordionIcon />
                   </AccordionButton>
-                  <AccordionPanel pb={4}>
-                      Hi this is the actual review
+                  <AccordionPanel pb={4} fontSize={'xs'}>
+                      {props.review}
                 </AccordionPanel>
               </AccordionItem>
               </Accordion>
